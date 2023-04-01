@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* * ====================main-reset */
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+a {
+  text-decoration: none;
+  display: block;
+  /* transition: 100ms; */
+  cursor: pointer;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+address{
+  font-style: normal;
+}
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+/* ============================== */
+body{
+
+}
+
+header{
+  font-family: 'Open Sans', sans-serif;
+  position: fixed;
+  width: 100%;
+
+ 
+
+}
+
+address{
+  margin-right: 10%;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* ==================================== */
+.wrapper {
+}
+/* ==================================== header ↓*/
+.header__box-top{
+  padding: 1em 0;
+  color: #cfcece;
+    background-color:#0f0f0f;
+    font-size: 14px;
+    
+}
+
+.container{
+  display: flex;
+  max-width: 1900xp;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+
+}
+.header__txt {
+  background-image: url(../img/time.svg);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 2em;
+}
+.header__box-bottom {
+  background-color: #1a1a1a;
+  position: relative;
+  
+
+}
+.header__box-bottom .container{
+  justify-content: space-between;
+  align-items: center;
+}
+.logo{
+display: block;
+width: 150px;
+}
+nav{
+
+}
+.nav__list {
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+.nav__item {
+  padding: 0.5em 0 0.5em 2em;
+  display: flex;
+  align-items: center;
+}
+
+.nav__link {
+ 
+  color: #cfcece;
+}
+.nav__link-call{
+  background-image: url(../img/time.svg);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 2em;
+}
+
+
+.nav__ico{
+  width: 8px;
+  height: 8px;
+  background-color: green;
+  margin-right: 0.5em;
+  border-radius: 50%;
+  margin-top: 2px;
+}
+
+@keyframes  nav__ico-animate{
+}
+/* ---------------burger ↓*/
+.burger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.burger__item {
+  display: block;
+  width: 60px;
+  height: 8px;
+  /* outline: #ffffff solid 1px; */
+  margin: 2px 0;
+  transition: 0.4s;
+  background-image: url(../img/burger-item.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+
+.change .burger__item_top {
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.change .burger__item_middle {
+  transform: rotate(45deg);
+}
+
+.change .burger__item_bottom {
+  transform: translate(0, 15px);
+  width: 1px;
+}
+
+/* ---------------burger ↑ */
+/* ===========================  header ↑ */
+
+/* =======================================main ↓*/
+
+/* ==============================avatar ↓ */
+.avatar{
+  height: 100vh;
+  background-image: url('../img/background.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+/* ==================================== */
+@media screen and (orientation:portrait) {
+
+  .container{
+    padding: 0 10px;
+  }
+
+.header__box-top{
+  display: none;
+}
+
+.header__box-bottom{
+  padding: 16px 0;
+}
+nav{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #1d1c1cee;
+  width: 100%;
+  transition: 300ms;
+  /* height: 100vh; */
+  padding: 2em 0;
+ 
+}
+
+.nav__list{
+  display: block;
+position: relative;
+z-index: -1;
+text-align: center;
+
+
+
+}
+
+.nav__item{
+
+}
+
+.nav__item:hover{
+  background-color: #c62320d5;
+
+}
+
+.nav__item:hover .nav__link{
+
+color: #a3a3a3;
+}
+
+.nav__link {
+  color: #ffffff;
+}
+
+.nav__active{
+  transform: translateY(100%);
+}
+
+
+.avatar{
+  height: 100vh;
+  background-position: 50% 5em;
+  background-repeat: no-repeat;
+  background-size: 150%;
+
+}
+
+
+}
+
+@media screen and (orientation:landscape) {
+  .burger {
+ display: none;
+  }
+}
+main{
+  position: relative;
+  z-index: -2;
+}
